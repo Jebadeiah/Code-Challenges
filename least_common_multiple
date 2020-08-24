@@ -1,0 +1,25 @@
+#Write a Python program to get the least common multiple of two positive integers
+
+
+
+
+def lcm(int1: int, int2: int) -> int:
+    int1_m_lst = []
+    int2_m_lst = []
+    result = []
+    
+    for num in range(1, int1+1):
+        if int1 % num == 0:
+            int1_m_lst.append(num)
+    for num in range(1, int2+1):
+        if int2 % num == 0:
+            int2_m_lst.append(num)
+    for multiple in int1_m_lst:
+        if multiple in int2_m_lst:
+            result.append(multiple)
+            
+    result.sort()
+    res = result[0]
+    return res
+
+print(lcm(100, 1200))

@@ -1,0 +1,17 @@
+# Print twinkle twinkle little star
+# Where the first line is left-aligned,
+# The second line is tabbed in 1 space
+# The third and fourth lines are tabbed in 2 spaces
+# The fifth line is left-aligned
+# And the sixth line is tabbed in 1 space
+
+
+
+twinkle_twinkle = (f'''Twinkle, twinkle, little star, 
+\n\t How I wonder what you are!
+\n\t\t Up above the world so high,
+\n\t\t Like a diamond in the sky.
+\n Twinkle, twinkle, little star,
+\n\t How I wonder what you are.''')
+
+print(twinkle_twinkle)

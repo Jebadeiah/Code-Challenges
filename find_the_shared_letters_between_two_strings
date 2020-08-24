@@ -1,0 +1,17 @@
+# Given two strings, return a string containing only the
+# letters shared between the two
+
+def shared_letters(a, b):
+    ret = []
+    for l in a:
+        l = l.lower()
+        if l in b.lower():
+            ret.append(l)
+    rtrn = list(dict.fromkeys(ret))
+    return "".join(sorted(rtrn))
+    
+# Here's an example that's much cleaner, provided to us by
+# Longyue
+
+def shared_letters(a, b):
+    return "".join(sorted(set(a.lower()) & set(b.lower())))

@@ -1,0 +1,11 @@
+# Hamming distance is the number of characters that differ between
+# two strings. Create a function that computes the hamming distance
+# between two strings.
+
+def hamming_distance(txt1, txt2):
+    zipped = zip(txt1, txt2)
+    ham = 0
+    for num1, num2 in zipped:
+       if num1 != num2:
+           ham+=1
+    return ham

@@ -1,0 +1,27 @@
+# Python got drunk and the built-in functions str() and int() are 
+# acting odd:
+# str(4)   -> 4
+# str("4") -> 4
+# int("4") -> "4"
+# int(4)   -> "4"
+
+# You need to create two functions to substitute str() and int().
+# A function called int_to_str() that converts integers into 
+# strings and a function called str_to_int() that converts strings
+# into integers. 
+
+def int_to_str(num):
+    return str(num)
+
+def str_to_int(num):
+    return int(num)
+    
+# I... don't understand. Playing around with the code gave me the
+# correct answer below, but it seems opposite of my understanding
+# of what these functions were supposed to do
+
+def int_to_str(num):
+    return int(num)
+
+def str_to_int(num):
+    return str(num)

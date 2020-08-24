@@ -1,0 +1,33 @@
+# Create a function that returns 'True' if each pair of
+# adjacent numbers in a list shares at least one digit
+# and 'False' otherwise.
+
+import copy
+
+def shared_digits(lst):
+    lst = copy.copy(lst)
+    current = 0
+    for dgt in lst:
+        current = lst.pop(0)
+        for d in str(current):
+            if d in lst:
+                return True
+                break
+    return False
+    
+# My code failed repeatedly. I had to give up and check the
+# correct answers. Here's the one that makes the most sense
+# to me. Brought to us by Donnamae
+
+def shared_digits(lst):
+    for i in range(0, len(lst) - 1):
+        one = list(str(lst[i]))
+        two = list(str(lst[i + 1]))
+        local = False
+        for j in one:
+            if j in two:
+                local = True
+        if not local:
+            return False
+
+    return True

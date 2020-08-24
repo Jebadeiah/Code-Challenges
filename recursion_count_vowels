@@ -1,0 +1,16 @@
+# Write a function that recursively returns the number of vowels
+# in a string. If it wasn't clear enough already, you should use
+# recursion in your solution. 
+
+def vowels(string):
+    count = 0
+    vowel = 'aeiou'
+    for l in string:
+       if l in vowel:
+            count+=1
+    return count
+    
+# A more pythonic version by zatoichi49
+
+def vowels(s):
+   return 0 if not s else (s[0] in 'aeiou') + vowels(s[1:])

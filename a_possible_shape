@@ -1,0 +1,51 @@
+# Given the number 'n' and a list of interior angles 'angles',
+# return whether or not it's possible to make a convex
+# polygon with 'n' sides with the angles given. Remember
+# that angles mush be under 180 degrees.
+
+# Notes
+#   Return 'False' if 'n' is less than 3
+#   There will always be an 'n' number of angles given
+#   The sum of interior angles is (n-2) * 180
+
+def is_shape_possible(n, angles):
+    sumdig = sum(int(d) for d in angles)
+    if n < 3:
+        return False
+    for d in angles:
+        if d > 180:
+            return False
+    if (n-2) *180 == sumdig:
+        return True
+    else:
+        return False
+        
+        
+# I thought I could do better, so I refactored it into this
+
+def is_shape_possible(n, angles):
+    if n < 3:
+        return False
+    for d in angles:
+        if d > 180:
+            return False
+    if (n-2) *180 == sum(int(d) for d in angles):
+        return True
+    else:
+        return False
+        
+# I tried getting it tighter, but this wouldn't work
+
+def is_shape_possible(n, angles):
+    if n < 3 or (d > 180 for d in angles):
+        return False
+    if (n-2) * 180 == sum(int(d) for d in angles):
+        return True
+    else:
+        return False
+        
+# And of course someone cut it even further than I was trying
+# to. This is from RandyWaterhouse
+
+def is_shape_possible(n, angles):
+    return n > 2 and sum(angles) == (n - 2) * 180 and max(angles) <= 180
